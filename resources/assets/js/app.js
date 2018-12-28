@@ -9,6 +9,11 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -19,7 +24,20 @@ window.Vue = require('vue');
 let Myheader = require('./components/header.vue');
 let Myfooter = require('./components/footer.vue');
 
+let home = require('./components/home.vue');
+let about = require('./components/about.vue');
+
+const routes = [
+    { path: '/home', component: home },
+    { path: '/about', component: about }
+  ]
+
+const router = new VueRouter({
+routes // short for `routes: routes`
+})
+
 const app = new Vue({
     el: '#app',
+    router,
     components:{Myheader,Myfooter}
 });

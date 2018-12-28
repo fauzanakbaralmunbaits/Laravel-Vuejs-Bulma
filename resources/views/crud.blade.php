@@ -12,6 +12,8 @@
 
     <Myheader></Myheader>
 
+        <router-view></router-view>
+
     <Myfooter></Myfooter>
 
     </div>

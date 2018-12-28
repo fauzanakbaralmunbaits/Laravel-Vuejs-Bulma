@@ -2,7 +2,7 @@
 
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="">
                 <img src="" alt="Bitfumes" width="112" height="28">
             </a>
 
@@ -26,12 +26,8 @@
 
         <div id="navbarBasicExample" class="navbar-menu is-active">
             <div class="navbar-start">
-            <a class="navbar-item">
-                Home
-            </a>
-            <a class="navbar-item">
-                About
-            </a>
+                <router-link to="/home" class="navbar-item">Home</router-link>
+                <router-link to="/about" class="navbar-item">About</router-link>
             </div>
         </div>
     </nav>
