@@ -989,10 +989,11 @@ window.Vue = __webpack_require__(35);
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 var Myheader = __webpack_require__(47);
+var Myfooter = __webpack_require__(49);
 
 var app = new Vue({
   el: '#app',
-  components: { Myheader: Myheader }
+  components: { Myheader: Myheader, Myfooter: Myfooter }
 });
 
 /***/ }),
@@ -41015,13 +41016,7 @@ var staticRenderFns = [
             { staticClass: "navbar-item", attrs: { href: "https://bulma.io" } },
             [
               _c("img", {
-                attrs: {
-                  src: "https://bulma.io/images/bulma-logo.png",
-                  alt:
-                    "Bulma: Free, open source, & modern CSS framework based on Flexbox",
-                  width: "112",
-                  height: "28"
-                }
+                attrs: { src: "", alt: "Bitfumes", width: "112", height: "28" }
               })
             ]
           ),
@@ -41029,11 +41024,12 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "navbar-burger",
+              staticClass: "navbar-burger burger is-active",
               attrs: {
                 role: "button",
                 "aria-label": "menu",
-                "aria-expanded": "false"
+                "aria-expanded": "false",
+                "data-target": "navbarBasicExample"
               }
             },
             [
@@ -41044,7 +41040,26 @@ var staticRenderFns = [
               _c("span", { attrs: { "aria-hidden": "true" } })
             ]
           )
-        ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "navbar-menu is-active",
+            attrs: { id: "navbarBasicExample" }
+          },
+          [
+            _c("div", { staticClass: "navbar-start" }, [
+              _c("a", { staticClass: "navbar-item" }, [
+                _vm._v("\n            Home\n        ")
+              ]),
+              _vm._v(" "),
+              _c("a", { staticClass: "navbar-item" }, [
+                _vm._v("\n            About\n        ")
+              ])
+            ])
+          ]
+        )
       ]
     )
   }
@@ -41055,6 +41070,95 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-b37ee638", module.exports)
+  }
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(39)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(50)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/footer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-f5e3ae1c", Component.options)
+  } else {
+    hotAPI.reload("data-v-f5e3ae1c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "footer" }, [
+      _c("div", { staticClass: "content has-text-centered" }, [
+        _c("p", [
+          _c("strong", [_vm._v("Vuejs Crud App")]),
+          _vm._v(" by "),
+          _c("a", { attrs: { href: "https://jgthms.com" } }, [_vm._v("Baits")]),
+          _vm._v(". Access The source code\n        "),
+          _c(
+            "a",
+            { attrs: { href: "http://github.com/fauzanakbaralmunbaits" } },
+            [_vm._v("Github/fauzanakbaralmunbaits")]
+          ),
+          _vm._v(".\n        ")
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-f5e3ae1c", module.exports)
   }
 }
 
