@@ -20,7 +20,6 @@ Vue.use(VueRouter)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 let Myheader = require('./components/header.vue');
 let Myfooter = require('./components/footer.vue');
 
@@ -33,6 +32,7 @@ const routes = [
   ]
 
 const router = new VueRouter({
+    mode:'history',
 routes // short for `routes: routes`
 })
 
