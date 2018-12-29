@@ -1,8 +1,11 @@
 <template>
+
+    <div>
+
     <nav class="panel column is-offset-2 is-8">
         <p class="panel-heading">
             Vuejs Crud
-            <button class="button is-link is-outlined">
+            <button class="button is-link is-outlined" @click="openadd">
             Add New
             </button>
         </p>
@@ -30,4 +33,31 @@
             </span>
         </a>
         </nav>
+
+        <add :openmodal='addActive' @closeRequest='close'></add>
+
+    </div>
+
 </template>
+
+<script>
+
+let add = require('./add.vue');
+export default {
+    components:{add},
+    data(){
+        return{
+            addActive : ''
+        }
+    },
+    methods:{
+        openadd(){
+            this.addActive = 'is-active';
+        },
+        close(){
+            this.addActive = '';
+        }
+    }
+}
+</script>
+

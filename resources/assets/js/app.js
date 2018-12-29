@@ -26,13 +26,14 @@ let Myfooter = require('./components/footer.vue');
 let home = require('./components/home.vue');
 let about = require('./components/about.vue');
 
+
 const routes = [
     { path: '/home', component: home },
     { path: '/about', component: about }
   ]
 
 const router = new VueRouter({
-    mode:'history',
+    // mode:'history',
 routes // short for `routes: routes`
 })
 
