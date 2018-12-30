@@ -13,7 +13,7 @@ class CrudRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,9 @@ class CrudRequest extends FormRequest
     {
         return [
             //
+            'name'=>'required|max:191',
+            'phone'=>'required|max:10|numeric',
+            'email'=>'required|email|unique:crud_controllers'
         ];
     }
 }
