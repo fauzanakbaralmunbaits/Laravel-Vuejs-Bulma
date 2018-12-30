@@ -7,6 +7,24 @@
             <button class="delete" aria-label="close" @click='close'></button>
             </header>
             <section class="modal-card-body">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Name">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Phone</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="Email">
+                    </div>
+                </div>
             <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">

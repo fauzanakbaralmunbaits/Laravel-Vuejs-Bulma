@@ -12,9 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('crud');
+    return view('welcome');
 });
 
-Route::get('/{name}',function(){
+Route::get('/crud/{name}',function(){
     return redirect('/');
 })->where('name','[A-Za-z]+');
+
+Route::resource('crud','CrudControllerController');
