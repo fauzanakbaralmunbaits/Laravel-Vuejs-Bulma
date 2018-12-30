@@ -37,6 +37,12 @@ class CrudControllerController extends Controller
     public function store(Request $request)
     {
         //
+        // return $request->all();
+        $save = new CrudController;
+        $save->name = $request->name;
+        $save->phone = $request->phone;
+        $save->email = $request->email;
+        $save->save();
     }
 
     /**
