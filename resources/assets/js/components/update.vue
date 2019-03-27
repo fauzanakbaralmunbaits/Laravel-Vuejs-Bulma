@@ -3,7 +3,7 @@
         <div class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-            <p class="modal-card-title">Add New Data</p>
+            <p class="modal-card-title">Update {{ list.name }} Detail</p>
             <button class="delete" aria-label="close" @click='close'></button>
             </header>
             <section class="modal-card-body">
@@ -31,7 +31,7 @@
             <!-- Content ... -->
             </section>
             <footer class="modal-card-foot">
-            <button class="button is-success" @click='save'>Save</button>
+            <button class="button is-success" @click='update'>Update</button>
             <button class="button" @click='close'>Cancel</button>
             </footer>
         </div>
@@ -43,11 +43,7 @@ export default {
     props:['openmodal'],
     data(){
         return{
-            list:{
-                name:'',
-                phone:'',
-                email:''
-            },
+            list:{},
             errors:{
 
             }
@@ -57,8 +53,8 @@ export default {
         close(){
             this.$emit('closeRequest')
         },
-        save(){
-            axios.post('/crud', this.$data.list).then((response)=> this.close())
+        update(){
+            axios.patch(`/crud/${this.list.id}`, this.$data.list).then((response)=> this.close())
             .catch((error)=> this.errors = error.response.data.errors)
         }
     }

@@ -19,6 +19,13 @@ class CrudControllerController extends Controller
         return view('crud');
     }
 
+    public function getData()
+    {
+
+        return CrudController::orderBy('name','ASC')->get();
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -75,9 +82,17 @@ class CrudControllerController extends Controller
      * @param  \App\CrudController  $crudController
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CrudController $crudController)
+    public function update(CrudRequest $request)
+        // public function update(Request $request, CrudController $crudController)
     {
         //
+        $save = CrudController::find($request->id);
+        $save->name = $request->name;
+        $save->phone = $request->phone;
+        $save->email = $request->email;
+        $save->save();
+
+        // return $request->all();
     }
 
     /**
@@ -86,8 +101,10 @@ class CrudControllerController extends Controller
      * @param  \App\CrudController  $crudController
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CrudController $crudController)
+    // public function destroy(CrudController $crudController)
+    public function destroy(CrudController $crud)
     {
         //
+        CrudController::where('id', $crud->id)->delete();
     }
 }

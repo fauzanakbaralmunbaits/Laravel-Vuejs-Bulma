@@ -15,8 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('/', function () {
+//     return redirect('/crud');
+// });
+
 Route::get('/crud/{name}',function(){
     return redirect('/');
 })->where('name','[A-Za-z]+');
 
 Route::resource('crud','CrudControllerController');
+
+Route::post('getData','CrudControllerController@getData');
